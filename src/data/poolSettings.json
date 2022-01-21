@@ -1,0 +1,19 @@
+{
+  "basicInformation": {
+    "poolName": "Fantasy 2021",
+    "poolCommissioner": "Emilio Escobedo (alejandro9445@outlook.com)"
+  },
+  "pickSettings": {
+    "pickDeadline": "The final pick deadline is the first kickoff of the playoffs. After this no picks can be changed.",
+    "tiebreaker": "Combined total points for the Super Bowl"
+  },
+  "scoringSettings": {
+    "basePoints": 1,
+    "postSeasonMultipliers": {
+      "wildcard": 1,
+      "divisional": 2,
+      "conference": 4,
+      "superbowl": 8
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+	"poolEntries": [
+		{
+			"name": "Pipo",
+			"wildcard": ["steelers", "bills", "bengals", "bucaneers", "49ers", "rams"],
+			"divisional": ["steelers", "bengals", "49ers", "rams"],
+			"conference": ["bengals", "rams"],
+			"superbowl":"rams",
+			"tie": 37
+		},
+		{
+			"name": "Chema",
+			"wildcard": ["chiefs", "patriots", "bengals", "bucaneers", "49ers", "cardinals"],
+			"divisional": ["titans", "bengals", "packers", "cardinals"],
+			"conference": ["titans", "packers"],
+			"superbowl":"packers",
+			"tie": 48
+		},
+		{
+			"name": "Alexander",
+			"wildcard": ["chiefs", "patriots", "bengals", "bucaneers", "cowboys", "rams"],
+			"divisional": ["titans", "chiefs", "packers", "cowboys"],
+			"conference": ["chiefs", "packers"],
+			"superbowl":"packers",
+			"tie": 55
+		},
+		{
+			"name": "Batos Locos",
+			"wildcard": ["chiefs", "patriots", "bengals", "bucaneers", "49ers", "rams"],
+			"divisional": ["titans", "bengals", "packers", "bucaneers"],
+			"conference": ["titans", "packers"],
+			"superbowl":"packers",
+			"tie": 51
+		},
+		{
+			"name": "Boris",
+			"wildcard": ["chiefs", "bills", "bengals", "bucaneers", "49ers", "rams"],
+			"divisional": ["bengals", "chiefs", "packers", "bucaneers"],
+			"conference": ["chiefs", "bucaneers"],
+			"superbowl":"bucaneers",
+			"tie": 37
+		},
+		{
+			"name": "Adrian",
+			"wildcard": ["chiefs", "bills", "raiders", "bucaneers", "49ers", "rams"],
+			"divisional": ["titans", "chiefs", "packers", "bucaneers"],
+			"conference": ["chiefs", "packers"],
+			"superbowl":"chiefs",
+			"tie": 50
+		}
+	],
+	"teamLogos": {
+		"steelers": "https://www.runyourpool.com/images/team_logos/nfl/small/9.png",
+		"bills": "https://www.runyourpool.com/images/team_logos/nfl/small/1.png",
+		"bengals": "https://www.runyourpool.com/images/team_logos/nfl/small/6.png",
+		"bucaneers": "https://www.runyourpool.com/images/team_logos/nfl/small/24.png",
+		"49ers": "https://www.runyourpool.com/images/team_logos/nfl/small/28.png",
+		"rams": "https://www.runyourpool.com/images/team_logos/nfl/small/26.png",
+		"chiefs": "https://www.runyourpool.com/images/team_logos/nfl/small/11.png",
+		"patriots": "https://www.runyourpool.com/images/team_logos/nfl/small/4.png",
+		"cardinals": "https://www.runyourpool.com/images/team_logos/nfl/small/18.png",
+		"titans": "https://www.runyourpool.com/images/team_logos/nfl/small/8.png",
+		"packers": "https://www.runyourpool.com/images/team_logos/nfl/small/22.png",
+		"cowboys": "https://www.runyourpool.com/images/team_logos/nfl/small/15.png",
+		"raiders": "https://www.runyourpool.com/images/team_logos/nfl/small/12.png"
+	}
+}

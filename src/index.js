@@ -1,17 +1,73 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import pool from './data/poolEntries.json';
+import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class Pool extends React.Component {
+    getWildcard(entry) {
+        return entry.wildcard;
+    }
+    render() {
+      return (
+        <Table className="table">
+            <thead>
+                <tr>
+                    <th scope="col">Entry Name</th>
+                    <th scope="col">Wild Card</th>
+                    <th scope="col">Divisional</th>
+                    <th scope="col">Conference Championship</th>
+                    <th scope="col">Super Bowl</th>
+                    <th scope="col">Tie</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    pool.poolEntries.map((entry, i) => {
+                        return (
+                            <tr key={i}>
+                                <td>{entry.name}</td>
+                                <td>
+                                    {
+                                        entry.wildcard.map((team) => {
+                                            return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                        })
+                                    }
+                                </td>
+                                <td>
+                                    {
+                                        entry.divisional.map((team) => {
+                                            return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                        })
+                                    }
+                                </td>
+                                <td>
+                                    {
+                                        entry.conference.map((team) => {
+                                            return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                        })
+                                    }
+                                </td>
+                                <td>
+                                    <img src={pool.teamLogos[entry.superbowl]}></img>
+                                </td>
+                                <td>
+                                    {entry.tie}
+                                </td>
+                            </tr>
+                        );
+                    })
+                }
+            </tbody>
+        </Table>
+      );
+    }
+  }
+  
+  // ========================================
+  
+  ReactDOM.render(
+    <Pool />,
+    document.getElementById('root')
+  );
+  
