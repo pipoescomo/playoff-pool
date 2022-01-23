@@ -3,7 +3,7 @@
   "poolType": "NFL Playoffs Pool",
   "poolCommissioner": "Emilio Escobedo (alejandro9445@outlook.com)",
   "pickDeadline": "The final pick deadline is the first kickoff of the playoffs. After this no picks can be changed.",
-  "tiebreaker": "Combined total points for the Super Bowl",
+  "tiebreaker": "Combined total points for the Superbowl",
   "pointMultipliers": {
     "wildcard": 1,
     "divisional": 2,
