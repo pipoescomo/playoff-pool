@@ -31,7 +31,7 @@ class Pool extends React.Component {
     render() {
       return (
         <React.Fragment>
-            <h1>NFL Playoffs Pool</h1>
+            <h1>{poolSettings.poolName}</h1>
             <h2>Pool Entries</h2>
             <Table>
                 <thead>
@@ -123,45 +123,49 @@ class Pool extends React.Component {
             </Table>
             <h2>Pool Settings</h2>
             <Table>
-                <tr>
-                    <td>Pool name</td>
-                    <td>{poolSettings.basicInformation.poolName}</td>
-                </tr>
-                <tr>
-                    <td>Comissioner</td>
-                    <td>{poolSettings.basicInformation.poolCommissioner}</td>
-                </tr>
-                <tr>
-                    <td>Pick deadline</td>
-                    <td>{poolSettings.pickSettings.pickDeadline}</td>
-                </tr>
-                <tr>
-                    <td>Points for each win</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>Wild card:</td>
-                                <td>{poolSettings.scoringSettings.postSeasonMultipliers.wildcard} points</td>
-                            </tr>
-                            <tr>
-                                <td>Divisional:</td>
-                                <td>{poolSettings.scoringSettings.postSeasonMultipliers.divisional} points</td>
-                            </tr>
-                            <tr>
-                                <td>Conference:</td>
-                                <td>{poolSettings.scoringSettings.postSeasonMultipliers.conference} points</td>
-                            </tr>
-                            <tr>
-                                <td>Super Bowl:</td>
-                                <td>{poolSettings.scoringSettings.postSeasonMultipliers.superbowl} points</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Tiebreaker</td>
-                    <td>{poolSettings.pickSettings.tiebreaker}</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <th>Pool type</th>
+                        <td>{poolSettings.poolType}</td>
+                    </tr>
+                    <tr>
+                        <th>Comissioner</th>
+                        <td>{poolSettings.poolCommissioner}</td>
+                    </tr>
+                    <tr>
+                        <th>Pick deadline</th>
+                        <td>{poolSettings.pickDeadline}</td>
+                    </tr>
+                    <tr>
+                        <th>Points for each win</th>
+                        <td>
+                            <Table>
+                                <tbody>
+                                    <tr>
+                                        <td>Wild card:</td>
+                                        <td>{poolSettings.pointMultipliers.wildcard} points</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Divisional:</td>
+                                        <td>{poolSettings.pointMultipliers.divisional} points</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Conference:</td>
+                                        <td>{poolSettings.pointMultipliers.conference} points</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Super Bowl:</td>
+                                        <td>{poolSettings.pointMultipliers.superbowl} points</td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Tiebreaker</th>
+                        <td>{poolSettings.tiebreaker}</td>
+                    </tr>
+                </tbody>
             </Table>
         </React.Fragment>
         
