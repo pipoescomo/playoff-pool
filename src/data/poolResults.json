@@ -1,5 +1,5 @@
 {
-    "wildcard": ["bengals", "bills", "bucaneers", "49ers", "chiefs"],
+    "wildcard": ["bengals", "bills", "bucaneers", "49ers", "chiefs", "rams"],
     "divisional": ["bengals", "49ers"],
     "conference": [],
     "superbowl": "",
