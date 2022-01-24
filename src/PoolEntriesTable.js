@@ -105,7 +105,7 @@ class PoolSettingsTable extends React.Component {
                                         }
                                     </td>
                                     <td>
-                                        <Image src={pool.teamLogos[entry.superbowl]} alt={team}></Image>
+                                        <Image src={pool.teamLogos[entry.superbowl]} alt={entry.superbowl}></Image>
                                     </td>
                                     <td>
                                         {entry.tie}
