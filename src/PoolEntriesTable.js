@@ -51,26 +51,26 @@ class PoolSettingsTable extends React.Component {
                         <td>
                             {
                                 poolResults.wildcard.map((team) => {
-                                    return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                 })
                             }
                         </td>
                         <td>
                             {
                                 poolResults.divisional.map((team) => {
-                                    return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                 })
                             }
                         </td>
                         <td>
                             {
                                 poolResults.conference.map((team) => {
-                                    return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                 })
                             }
                         </td>
                         <td>
-                            <img src={pool.teamLogos[poolResults.superbowl]}></img>
+                            <Image src={pool.teamLogos[poolResults.superbowl]} alt={poolResults.superbowl}></Image>
                         </td>
                         <td>
                             {poolResults.score}
@@ -105,7 +105,7 @@ class PoolSettingsTable extends React.Component {
                                         }
                                     </td>
                                     <td>
-                                        <img src={pool.teamLogos[entry.superbowl]}></img>
+                                        <Image src={pool.teamLogos[entry.superbowl]} alt={team}></Image>
                                     </td>
                                     <td>
                                         {entry.tie}
