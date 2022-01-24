@@ -1,9 +1,11 @@
 {
   "name": "playoffs-pool",
   "version": "0.1.0",
-  "homepage":".",
+  "homepage": ".",
   "private": true,
   "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

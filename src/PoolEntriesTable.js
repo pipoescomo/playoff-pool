@@ -3,6 +3,7 @@ import pool from './data/poolEntries.json';
 import poolResults from './data/poolResults.json';
 import poolSettings from './data/poolSettings.json';
 import Table from 'react-bootstrap/Table';
+import Image from 'react-bootstrap/Image'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class PoolSettingsTable extends React.Component {
@@ -30,15 +31,15 @@ class PoolSettingsTable extends React.Component {
       return (
         <React.Fragment>
           <h2>Pool Entries</h2>
-            <Table striped bordered>
+            <Table striped>
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Entry Name</th>
-                        <th>Wildcard</th>
+                        <th>Wild Card</th>
                         <th>Divisional</th>
                         <th>Conference</th>
-                        <th>Superbowl</th>
+                        <th>Super Bowl</th>
                         <th>Tie</th>
                         <th>Points</th>
                     </tr>
@@ -85,21 +86,21 @@ class PoolSettingsTable extends React.Component {
                                     <td>
                                         {
                                             entry.wildcard.map((team) => {
-                                                return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                                return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                             })
                                         }
                                     </td>
                                     <td>
                                         {
                                             entry.divisional.map((team) => {
-                                                return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                                return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                             })
                                         }
                                     </td>
                                     <td>
                                         {
                                             entry.conference.map((team) => {
-                                                return (<img key={team} src={pool.teamLogos[team]}></img>);
+                                                return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                             })
                                         }
                                     </td>
