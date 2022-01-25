@@ -47,7 +47,4 @@ jobs:
           version: '276.0.0'
           service_account_email: ${{ secrets.GCP_SA_EMAIL }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
-      - run: gsutil rsync -r public gs://www.cuernacode.com
-      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=3600" gs://www.cuernacode.com/**/*.html
-      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://www.cuernacode.com/js/*.js
-      - run: gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://www.cuernacode.com/css/*.css
+      - run: gsutil -m rsync -r public gs://www.cuernacode.com/
