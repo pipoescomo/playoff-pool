@@ -23,25 +23,25 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '13.x'
-      - uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-      - uses: actions/cache@v1
-        with:
-          path: themes/my-theme/src/node_modules
-          key: ${{ runner.os }}-js-${{ hashFiles('themes/my-theme/src/yarn.lock') }}
-      - run: make deps
-      - run: make lint
-      - run: make test
-        env:
-          NODE_ENV: test
-      - run: make build
-        env:
-          NODE_ENV: production
-          HUGO_ENVIRONMENT: production
-      - name: Install dependencies
-        run: npm ci
-      - run: npm run build --if-present
+      # - uses: peaceiris/actions-hugo@v2
+      #   with:
+      #     hugo-version: 'latest'
+      # - uses: actions/cache@v1
+      #   with:
+      #     path: themes/my-theme/src/node_modules
+      #     key: ${{ runner.os }}-js-${{ hashFiles('themes/my-theme/src/yarn.lock') }}
+      # - run: make deps
+      # - run: make lint
+      # - run: make test
+      #   env:
+      #     NODE_ENV: test
+      # - run: make build
+      #   env:
+      #     NODE_ENV: production
+      #     HUGO_ENVIRONMENT: production
+      # - name: Install dependencies
+      #   run: npm ci
+      # - run: npm run build --if-present
       - uses: google-github-actions/setup-gcloud@master
         with:
           version: '276.0.0'
