@@ -7,8 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    build-and-deploy:
+  build-and-deploy:
     name: Build and Deploy to GCS
     runs-on: ubuntu-latest
     environment: production
