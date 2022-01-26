@@ -8,43 +8,23 @@ on:
 
 jobs:
   build:
+    build-and-deploy:
+    name: Build and Deploy to GCS
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [17.x]
+    environment: production
 
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '13.x'
-      # - uses: peaceiris/actions-hugo@v2
-      #   with:
-      #     hugo-version: 'latest'
-      # - uses: actions/cache@v1
-      #   with:
-      #     path: themes/my-theme/src/node_modules
-      #     key: ${{ runner.os }}-js-${{ hashFiles('themes/my-theme/src/yarn.lock') }}
-      # - run: make deps
-      # - run: make lint
-      # - run: make test
-      #   env:
-      #     NODE_ENV: test
-      # - run: make build
-      #   env:
-      #     NODE_ENV: production
-      #     HUGO_ENVIRONMENT: production
-      # - name: Install dependencies
-      #   run: npm ci
-      # - run: npm run build --if-present
+          node-version: '17.x'
+      - name: Install dependencies
+        run: npm install
+      - run: npm run build --if-present
       - uses: google-github-actions/setup-gcloud@master
         with:
           version: '276.0.0'
           service_account_email: ${{ secrets.GCP_SA_EMAIL }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
-      - run: gsutil -m rsync -d -c -r public gs://www.cuernacode.com/
+      - run: gsutil -m rsync -d -c -r . gs://www.cuernacode.com/
