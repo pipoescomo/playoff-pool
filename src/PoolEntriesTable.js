@@ -6,19 +6,30 @@ import Table from 'react-bootstrap/Table';
 import Image from 'react-bootstrap/Image'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const imageGreenStyle ={backgroundColor: '#90EE90'};
+const imageRedStyle ={backgroundColor: '#EC7063'};
+
+function SuperBowlImage(team) {
+    if(poolResults.conference.includes(team)) {
+        return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageGreenStyle}></Image>); 
+    }
+    if(poolResults.eliminated.includes(team)) {
+        return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageRedStyle}></Image>); 
+    }
+    return <Image src={pool.teamLogos[team]} alt={team}></Image>
+}
+
 class PoolSettingsTable extends React.Component {
-    getPoints(entry) {
-        let points = entry.wildcard.filter(team => poolResults.wildcard.includes(team)).length * poolSettings.pointMultipliers.wildcard;
-        points += entry.divisional.filter(team => poolResults.divisional.includes(team)).length * poolSettings.pointMultipliers.divisional;
-        points += entry.conference.filter(team => poolResults.conference.includes(team)).length * poolSettings.pointMultipliers.conference;
-        if(entry.superbowl === poolResults.superbowl) {
-            points +=  poolSettings.pointMultipliers.superbowl;
-        }
-        return points;
+    getPoints(teams, winners, pointMultiplier) {
+        return teams.filter(team => winners.includes(team)).length * pointMultiplier;
     }
     getEntriesWithPoints(entries) {
         return entries.map(entry => {
-            entry.points = this.getPoints(entry);
+            entry.wildcardPoints = this.getPoints(entry.wildcard, poolResults.wildcard, poolSettings.pointMultipliers.wildcard);
+            entry.divisionalPoints = this.getPoints(entry.divisional, poolResults.divisional, poolSettings.pointMultipliers.divisional);
+            entry.conferencePoints = this.getPoints(entry.conference, poolResults.conference, poolSettings.pointMultipliers.conference);
+            entry.superbowlPoints = entry.superbowl === poolResults.superbowl ? 8 : 0;
+            entry.totalPoints = entry.wildcardPoints + entry.divisionalPoints + entry.conferencePoints + entry.superbowlPoints;
             return entry;
         });
     }
@@ -37,9 +48,13 @@ class PoolSettingsTable extends React.Component {
                         <th>#</th>
                         <th>Entry Name</th>
                         <th>Wild Card</th>
+                        <th>Points</th>
                         <th>Divisional</th>
+                        <th>Points</th>
                         <th>Conference</th>
+                        <th>Points</th>
                         <th>Super Bowl</th>
+                        
                         <th>Tie</th>
                         <th>Points</th>
                     </tr>
@@ -55,6 +70,7 @@ class PoolSettingsTable extends React.Component {
                                 })
                             }
                         </td>
+                        <td>6</td>
                         <td>
                             {
                                 poolResults.divisional.map((team) => {
@@ -62,6 +78,7 @@ class PoolSettingsTable extends React.Component {
                                 })
                             }
                         </td>
+                        <td>8</td>
                         <td>
                             {
                                 poolResults.conference.map((team) => {
@@ -69,9 +86,11 @@ class PoolSettingsTable extends React.Component {
                                 })
                             }
                         </td>
+                        <td>8</td>
                         <td>
                             <Image src={pool.teamLogos[poolResults.superbowl]} alt={poolResults.superbowl}></Image>
                         </td>
+                        <td>8</td>
                         <td>
                             {poolResults.score}
                         </td>
@@ -86,32 +105,54 @@ class PoolSettingsTable extends React.Component {
                                     <td>
                                         {
                                             entry.wildcard.map((team) => {
+                                                if(poolResults.wildcard.includes(team)) {
+                                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageGreenStyle}></Image>); 
+                                                }
+                                                if(poolResults.eliminated.includes(team)) {
+                                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageRedStyle}></Image>); 
+                                                }
                                                 return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                             })
                                         }
                                     </td>
+                                    <td>{entry.wildcardPoints}</td>
                                     <td>
                                         {
                                             entry.divisional.map((team) => {
+                                                if(poolResults.divisional.includes(team)) {
+                                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageGreenStyle}></Image>); 
+                                                }
+                                                if(poolResults.eliminated.includes(team)) {
+                                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageRedStyle}></Image>); 
+                                                }
                                                 return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                             })
                                         }
                                     </td>
+                                    <td>{entry.divisionalPoints}</td>
                                     <td>
                                         {
                                             entry.conference.map((team) => {
+                                                if(poolResults.conference.includes(team)) {
+                                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageGreenStyle}></Image>); 
+                                                }
+                                                if(poolResults.eliminated.includes(team)) {
+                                                    return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageRedStyle}></Image>); 
+                                                }
                                                 return (<Image key={team} src={pool.teamLogos[team]} alt={team}></Image>);
                                             })
                                         }
                                     </td>
+                                    <td>{entry.conferencePoints}</td>
                                     <td>
-                                        <Image src={pool.teamLogos[entry.superbowl]} alt={entry.superbowl}></Image>
+                                        {SuperBowlImage(entry.superbowl)}
                                     </td>
+                                    <td>{entry.superbowlPoints}</td>
                                     <td>
                                         {entry.tie}
                                     </td>
                                     <td>
-                                        {this.getPoints(entry)}
+                                        {this.totalPoints}
                                     </td>
                                 </tr>
                             );

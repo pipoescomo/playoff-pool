@@ -1,0 +1,41 @@
+{
+    "steelers": {
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/9.png"
+    },
+    "bills": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/1.png"
+        },
+    "bengals": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/6.png"
+        },
+    "bucaneers": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/24.png"
+        },
+    "49ers": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/28.png"
+        },
+    "rams": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/26.png"
+        },
+    "chiefs": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/11.png"
+        },
+    "patriots": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/4.png"
+        },
+    "cardinals": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/18.png"
+        },
+    "titans": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/8.png"
+        },
+    "packers": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/22.png"
+        },
+    "cowboys": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/15.png"
+        },
+    "raiders": { 
+        "logoUrl": "https://www.runyourpool.com/images/team_logos/nfl/small/12.png"
+        }
+}
