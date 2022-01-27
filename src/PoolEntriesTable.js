@@ -19,6 +19,11 @@ function SuperBowlImage(team) {
     return <Image src={pool.teamLogos[team]} alt={team}></Image>
 }
 
+function BoldTotalPoints(totalPoints, possiblePoints) {
+    if(possiblePoints === 0) return <b>{totalPoints}</b>;
+    return totalPoints;
+}
+
 class PoolSettingsTable extends React.Component {
     getPoints(teams, winners, pointMultiplier) {
         return teams.filter(team => winners.includes(team)).length * pointMultiplier;
@@ -35,8 +40,15 @@ class PoolSettingsTable extends React.Component {
     }
     getSortedEntriesByPoints(entries) {
         return entries.sort(function (a, b) {
-            return b.points - a.points;
+            return b.totalPoints - a.totalPoints;
           })
+    }
+    getPossiblePoints(entry) {
+        let possiblePoints = entry.wildcard.filter(team => !poolResults.wildcard.includes(team) && !poolResults.eliminated.includes(team)).length * poolSettings.pointMultipliers.wildcard;
+        possiblePoints += entry.divisional.filter(team => !poolResults.divisional.includes(team) && !poolResults.eliminated.includes(team)).length * poolSettings.pointMultipliers.divisional;
+        possiblePoints += entry.conference.filter(team => !poolResults.conference.includes(team) && !poolResults.eliminated.includes(team)).length * poolSettings.pointMultipliers.conference;
+        possiblePoints += poolResults.superbowl !== entry.superbowl && !poolResults.eliminated.includes(entry.superbowl) ? poolSettings.pointMultipliers.superbowl : 0;
+        return possiblePoints;
     }
     render() {
       return (
@@ -54,9 +66,10 @@ class PoolSettingsTable extends React.Component {
                         <th>Conference</th>
                         <th>Points</th>
                         <th>Super Bowl</th>
-                        
-                        <th>Tie</th>
                         <th>Points</th>
+                        <th>Tie</th>
+                        <th>Total</th>
+                        <th>Possible</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,6 +107,7 @@ class PoolSettingsTable extends React.Component {
                         <td>
                             {poolResults.score}
                         </td>
+                        <td><b>30</b></td>
                         <td>30</td>
                     </tr>
                     {
@@ -152,7 +166,10 @@ class PoolSettingsTable extends React.Component {
                                         {entry.tie}
                                     </td>
                                     <td>
-                                        {this.totalPoints}
+                                        {BoldTotalPoints(entry.totalPoints, this.getPossiblePoints(entry))}
+                                    </td>
+                                    <td>
+                                        {this.getPossiblePoints(entry) + entry.totalPoints}
                                     </td>
                                 </tr>
                             );
