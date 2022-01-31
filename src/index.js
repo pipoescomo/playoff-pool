@@ -18,8 +18,8 @@ class Pool extends React.Component {
     }
   }
   
-  ReactDOM.render(
-    <Pool />,
-    document.getElementById('root')
-  );
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
   

@@ -1,4 +1,4 @@
-name: Playoffs Pool
+name: Playoff Pool
 
 on:
   push:
