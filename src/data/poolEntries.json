@@ -2,7 +2,7 @@
 	"poolEntries": [
 		{
 			"name": "Pipo",
-			"wildcard": ["steelers", "bills", "bengals", "bucaneers", "49ers", "rams"],
+			"wildcard": ["steelers", "bills", "bengals", "buccaneers", "49ers", "rams"],
 			"divisional": ["steelers", "bengals", "49ers", "rams"],
 			"conference": ["bengals", "rams"],
 			"superbowl":"rams",
@@ -10,7 +10,7 @@
 		},
 		{
 			"name": "Chema",
-			"wildcard": ["chiefs", "patriots", "bengals", "bucaneers", "49ers", "cardinals"],
+			"wildcard": ["chiefs", "patriots", "bengals", "buccaneers", "49ers", "cardinals"],
 			"divisional": ["titans", "bengals", "packers", "cardinals"],
 			"conference": ["titans", "packers"],
 			"superbowl":"packers",
@@ -18,7 +18,7 @@
 		},
 		{
 			"name": "Alexander",
-			"wildcard": ["chiefs", "patriots", "bengals", "bucaneers", "cowboys", "rams"],
+			"wildcard": ["chiefs", "patriots", "bengals", "buccaneers", "cowboys", "rams"],
 			"divisional": ["titans", "chiefs", "packers", "cowboys"],
 			"conference": ["chiefs", "packers"],
 			"superbowl":"packers",
@@ -26,24 +26,24 @@
 		},
 		{
 			"name": "Batos Locos",
-			"wildcard": ["chiefs", "patriots", "bengals", "bucaneers", "49ers", "rams"],
-			"divisional": ["titans", "bengals", "packers", "bucaneers"],
+			"wildcard": ["chiefs", "patriots", "bengals", "buccaneers", "49ers", "rams"],
+			"divisional": ["titans", "bengals", "packers", "buccaneers"],
 			"conference": ["titans", "packers"],
 			"superbowl":"packers",
 			"tie": 51
 		},
 		{
 			"name": "Boris",
-			"wildcard": ["chiefs", "bills", "bengals", "bucaneers", "49ers", "rams"],
-			"divisional": ["bengals", "chiefs", "packers", "bucaneers"],
-			"conference": ["chiefs", "bucaneers"],
-			"superbowl":"bucaneers",
+			"wildcard": ["chiefs", "bills", "bengals", "buccaneers", "49ers", "rams"],
+			"divisional": ["bengals", "chiefs", "packers", "buccaneers"],
+			"conference": ["chiefs", "buccaneers"],
+			"superbowl":"buccaneers",
 			"tie": 37
 		},
 		{
 			"name": "Adrian",
-			"wildcard": ["chiefs", "bills", "raiders", "bucaneers", "49ers", "rams"],
-			"divisional": ["titans", "chiefs", "packers", "bucaneers"],
+			"wildcard": ["chiefs", "bills", "raiders", "buccaneers", "49ers", "rams"],
+			"divisional": ["titans", "chiefs", "packers", "buccaneers"],
 			"conference": ["chiefs", "packers"],
 			"superbowl":"chiefs",
 			"tie": 50
@@ -53,7 +53,7 @@
 		"steelers": "https://www.runyourpool.com/images/team_logos/nfl/small/9.png",
 		"bills": "https://www.runyourpool.com/images/team_logos/nfl/small/1.png",
 		"bengals": "https://www.runyourpool.com/images/team_logos/nfl/small/6.png",
-		"bucaneers": "https://www.runyourpool.com/images/team_logos/nfl/small/24.png",
+		"buccaneers": "https://www.runyourpool.com/images/team_logos/nfl/small/24.png",
 		"49ers": "https://www.runyourpool.com/images/team_logos/nfl/small/28.png",
 		"rams": "https://www.runyourpool.com/images/team_logos/nfl/small/26.png",
 		"chiefs": "https://www.runyourpool.com/images/team_logos/nfl/small/11.png",

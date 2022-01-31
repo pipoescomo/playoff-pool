@@ -1,7 +1,6 @@
 import React from 'react';
 import poolSettings from './data/poolSettings.json';
 import Table from 'react-bootstrap/Table';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 class PoolSettingsTable extends React.Component {
     render() {
@@ -15,7 +14,7 @@ class PoolSettingsTable extends React.Component {
                         <td>{poolSettings.poolType}</td>
                     </tr>
                     <tr>
-                        <th>Comissioner</th>
+                        <th>Commissioner</th>
                         <td>{poolSettings.poolCommissioner}</td>
                     </tr>
                     <tr>

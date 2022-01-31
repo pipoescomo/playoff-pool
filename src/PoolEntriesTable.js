@@ -4,13 +4,12 @@ import poolResults from './data/poolResults.json';
 import poolSettings from './data/poolSettings.json';
 import Table from 'react-bootstrap/Table';
 import Image from 'react-bootstrap/Image'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const imageGreenStyle ={backgroundColor: '#90EE90'};
 const imageRedStyle ={backgroundColor: '#EC7063'};
 
 function SuperBowlImage(team) {
-    if(poolResults.conference.includes(team)) {
+    if(poolResults.superbowl === team) {
         return (<Image key={team} src={pool.teamLogos[team]} alt={team} style={imageGreenStyle}></Image>); 
     }
     if(poolResults.eliminated.includes(team)) {
