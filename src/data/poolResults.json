@@ -1,8 +1,8 @@
 {
-    "eliminated": ["steelers", "bills", "buccaneers", "patriots", "cardinals", "titans", "packers", "cowboys", "raiders", "chiefs", "49ers"],
+    "eliminated": ["steelers", "bills", "buccaneers", "patriots", "cardinals", "titans", "packers", "cowboys", "raiders", "chiefs", "49ers", "bengals"],
     "wildcard": ["bengals", "bills", "buccaneers", "49ers", "chiefs", "rams"],
     "divisional": ["bengals", "49ers", "rams", "chiefs"],
     "conference": ["bengals", "rams"],
-    "superbowl": "",
-    "score": "-"
+    "superbowl": "rams",
+    "score": "43"
 }
